@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --background: #020617;
+  --foreground: #e5e7eb;
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.25);
+  --border-subtle: rgba(148, 163, 184, 0.4);
+}
+
+body[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.18);
+  --border-subtle: rgba(148, 163, 184, 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #1e293b 0, transparent 55%),
+    radial-gradient(circle at top right, #0f172a 0, transparent 55%),
+    radial-gradient(circle at bottom, #020617 0, transparent 55%),
+    var(--background);
+  color: var(--foreground);
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+  z-index: -1;
+}
+
+.glass-panel {
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-subtle);
+  background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.18), transparent 55%),
+    rgba(15, 23, 42, 0.86);
+  box-shadow:
+    0 18px 60px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.8);
+}
+
+.pill {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%),
+    rgba(15, 23, 42, 0.8);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-anchor {
+  scroll-margin-top: 96px;
+}
