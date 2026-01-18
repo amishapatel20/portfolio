@@ -2,7 +2,9 @@
 
 This repository contains my personal AI/ML research and engineering portfolio, built with Next.js (App Router) and focused on end-to-end machine learning systems.
 
-The live site showcases my projects, research interests, experience, and skills in a single-page, scroll-animated layout inspired by DeveloperFolio.
+**Live site:** https://portfolio-five-eta-16.vercel.app
+
+The site showcases my projects, research interests, experience, and skills in a single-page, scroll-animated layout inspired by DeveloperFolio.
 
 ## Features
 
